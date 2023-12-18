@@ -1,18 +1,18 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth, browserSessionPersistence, onAuthStateChanged, User } from 'firebase/auth';
-import { getFirestore, collection, doc } from 'firebase/firestore';
+import { getFirestore } from 'firebase/firestore';
 import { useEffect, useState } from 'react';
 
 namespace FirebaseConfig {
 
     const firebaseConfig = {
-        apiKey: "AIzaSyDHIdtD12vTbForHsjy3cw8-iaOhfD5BwQ",
-        authDomain: "warehouse-dev-39d2e.firebaseapp.com",
-        projectId: "warehouse-dev-39d2e",
-        storageBucket: "warehouse-dev-39d2e.appspot.com",
-        messagingSenderId: "676623153241",
-        appId: "1:676623153241:web:47d109b72d663be5f69948",
-        measurementId: "G-GGSSTKJNP0"
+        apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+        authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+        projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+        storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+        messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+        appId: import.meta.env.VITE_FIREBASE_APP_ID,
+        measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
     };
 
     export const app = initializeApp(firebaseConfig);
