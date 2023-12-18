@@ -1,0 +1,93 @@
+#side-bar {
+
+    position: absolute;
+    left: 0; 
+    top: 0;
+    bottom: 0;
+
+    width: var(--side-bar-width);
+
+    background-color: var(--secondary-background-color);
+
+}
+
+#side-bar > .header {
+
+    width: 100%;
+    height: var(--nav-bar-height);
+    border-bottom: solid 1px var(--secondary-separator-color);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+}
+
+#side-bar > .header > .logo {
+
+    height: 30px;
+    width: 30px;
+    background-color: slategray;
+    margin: 0 0 0 0.75em;
+    border-radius: 5px;
+
+}
+
+#side-bar > .header > h1 {
+    
+    font-weight: 400;
+    font-size: 1.5rem;
+    margin: 0 0 0 0.5em;
+
+}
+
+#side-bar > .ou {
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    height: var(--nav-bar-height);
+
+    border-bottom: solid 1px var(--secondary-separator-color);
+
+}
+
+#side-bar > .ou:hover {
+
+    background-color: var(--secondary-hover-color);
+
+}
+
+#side-bar > .ou > .fa-icon { /* Settings */
+
+    margin: 0 0.75em 0 0;
+    color: var(--unfocused-text-color)
+
+}
+
+#side-bar > .ou > div {
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+
+#side-bar > .ou > div > .fa-icon { /* OU icon */
+
+    margin: 0 0.75em;
+    font-size: 1.2rem;
+    color: var(--unfocused-text-color)
+
+}
+
+#side-bar > .ou > div > h1 {
+
+    font-size: 1.0em;
+    font-weight: 500;
+    color: var(--unfocused-text-color);
+
+}

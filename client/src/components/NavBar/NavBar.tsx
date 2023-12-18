@@ -1,5 +1,5 @@
 import { useState } from "react";
-import AccountProfile from "./AccountProfile";
+import AccountProfile from "../AccountProfile/AccountProfile";
 import "./NavBar.css"
 
 export enum NavBarSelection {
@@ -19,8 +19,7 @@ const NavBar = () => {
 
         <section id="nav-bar">
 
-            <div>
-                <h1>Warehouse</h1>
+            <div className="navigation">
                 <ul>
                     <li className={navBarSelection == NavBarSelection.Dashboard ? "selected" : ""} onClick={() => setNavbarSelection(NavBarSelection.Dashboard)}>Dashboard</li>
                     <li className={navBarSelection == NavBarSelection.Assets ? "selected" : ""} onClick={() => setNavbarSelection(NavBarSelection.Assets)}>Assets</li>
@@ -29,7 +28,10 @@ const NavBar = () => {
                 </ul>
             </div>
 
-            <AccountProfile />
+            <div className="identification">
+                <h1>John Doe</h1>
+                <AccountProfile />
+            </div>
 
         </section>
 

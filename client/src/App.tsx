@@ -1,7 +1,8 @@
 import { GoogleAuthProvider, signInWithPopup, onAuthStateChanged } from 'firebase/auth';
 import FirebaseConfig, { getAuthUser } from './firebase';
 
-import NavBar from "./components/NavBar";
+import NavBar from "./components/NavBar/NavBar";
+import SideBar from './components/SideBar/SideBar';
 
 const App = () => {
 
@@ -19,7 +20,10 @@ const App = () => {
 
                 user == null ? 
                 <button onClick={handleGoogleLogin}>Sign in With Google</button> :
-                <h1>Signed In</h1>
+                <>
+                    <NavBar />
+                    <SideBar />
+                </>
 
 
             }
