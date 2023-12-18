@@ -1,5 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth, browserSessionPersistence, onAuthStateChanged, User } from 'firebase/auth';
+import { getFirestore, collection, doc } from 'firebase/firestore';
 import { useEffect, useState } from 'react';
 
 namespace FirebaseConfig {
@@ -21,19 +22,43 @@ namespace FirebaseConfig {
 
 }
 
+export namespace DataBase {
+
+    const db = getFirestore(FirebaseConfig.app);
+
+    export const getOrCreateUserDocument = (googleUser: User) => {
+
+
+        console.log(googleUser);
+
+    }
+
+}
+
+export type UserDocumentData = {};
+
+export type PairedUser = { googleUser: User, userDocumentData: UserDocumentData }
+
 export const getAuthUser = () => {
 
-    const [authUser, setAuthUser] = useState<User | null>(null);
+    const [authUser, setAuthUser] = useState<PairedUser | null>(null);
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(FirebaseConfig.auth, (user) => {
-            setAuthUser(user);
+            if(user == null) {
+                setAuthUser(null);
+            } else {
+                DataBase.getOrCreateUserDocument(user);
+                
+                // Get document user
+                setAuthUser({ googleUser: user, userDocumentData: {} });
+            }
         });
 
         return () => {
             unsubscribe();
         }
-    })
+    }, []);
 
     return authUser;
 

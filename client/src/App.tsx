@@ -1,4 +1,4 @@
-import { GoogleAuthProvider, signInWithPopup, onAuthStateChanged } from 'firebase/auth';
+import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import FirebaseConfig, { getAuthUser } from './firebase';
 
 import NavBar from "./components/NavBar/NavBar";
