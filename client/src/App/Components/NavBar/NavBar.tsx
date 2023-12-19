@@ -1,7 +1,7 @@
 import { useState } from "react";
 import AccountProfile from "../AccountProfile/AccountProfile";
 import "./NavBar.css"
-import { getAuthUser } from "../../firebase";
+import { getAuthUser } from "../../../firebase";
 import Skeleton from "../Skeleton/Skeleton";
 
 export enum NavBarSelection {

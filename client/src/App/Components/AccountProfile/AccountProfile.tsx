@@ -1,4 +1,4 @@
-import { getAuthUser } from '../../firebase';
+import { getAuthUser } from '../../../firebase';
 import Skeleton from '../Skeleton/Skeleton';
 import './AccountProfile.css'
 
