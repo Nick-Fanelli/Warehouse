@@ -1,4 +1,5 @@
 import { getAuthUser } from '../../firebase';
+import Skeleton from '../Skeleton/Skeleton';
 import './AccountProfile.css'
 
 const AccountProfile = () => {
@@ -8,10 +9,12 @@ const AccountProfile = () => {
     return (
         <div id="acc-profile">
             {
-                user ?
-                <img id="acc-profile" src={user.googleUser.photoURL!}></img>
+                user && user.googleUser.photoURL ?
+                <img src={user?.googleUser.photoURL!}></img>
                 :
-                <div className="skeleton"></div>
+                <div className='sk'>
+                    <Skeleton fillSpace={true} />
+                </div>
             }
         </div>
     )

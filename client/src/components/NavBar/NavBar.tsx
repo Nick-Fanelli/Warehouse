@@ -1,6 +1,8 @@
 import { useState } from "react";
 import AccountProfile from "../AccountProfile/AccountProfile";
 import "./NavBar.css"
+import { getAuthUser } from "../../firebase";
+import Skeleton from "../Skeleton/Skeleton";
 
 export enum NavBarSelection {
 
@@ -14,6 +16,8 @@ export enum NavBarSelection {
 const NavBar = () => {
 
     const [navBarSelection, setNavbarSelection] = useState<NavBarSelection>(NavBarSelection.Dashboard);
+
+    const user = getAuthUser();
 
     return (
 
@@ -29,7 +33,7 @@ const NavBar = () => {
             </div>
 
             <div className="identification">
-                <h1>John Doe</h1>
+                <h1>{user ? user.googleUser.displayName : <Skeleton />}</h1>
                 <AccountProfile />
             </div>
 

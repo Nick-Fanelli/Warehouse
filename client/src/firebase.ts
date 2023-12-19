@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth, browserSessionPersistence, onAuthStateChanged, User } from 'firebase/auth';
-import { getFirestore } from 'firebase/firestore';
+// import { getFirestore } from 'firebase/firestore';
 import { useEffect, useState } from 'react';
 
 namespace FirebaseConfig {
@@ -24,7 +24,7 @@ namespace FirebaseConfig {
 
 export namespace DataBase {
 
-    const db = getFirestore(FirebaseConfig.app);
+    // const db = getFirestore(FirebaseConfig.app);
 
     export const getOrCreateUserDocument = (googleUser: User) => {
 

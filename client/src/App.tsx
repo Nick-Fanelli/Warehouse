@@ -15,20 +15,17 @@ const App = () => {
 
     return (
         <section id="root-app" className="dark">
+                {
 
-            {
-
-                user == null ? 
-                <button onClick={handleGoogleLogin}>Sign in With Google</button> :
-                <>
-                    <NavBar />
-                    <SideBar />
-                </>
+                    user == null ? 
+                    <button onClick={handleGoogleLogin}>Sign in With Google</button> :
+                    <>
+                        <NavBar />
+                        <SideBar />
+                    </>
 
 
-            }
-            
-
+                }
         </section>
     )
 

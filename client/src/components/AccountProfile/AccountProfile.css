@@ -1,35 +1,30 @@
 #acc-profile {
 
-    width: 45px;
-    height: 45px;
-    border-radius: 100%;
+    width: 48px;
+    height: 48px;
     display: flex;
     justify-content: center;
     align-content: center;
+    overflow: hidden;
+    border-radius: 100%;
 
 }
 
 #acc-profile:hover {
 
-    background-color: var(--secondary-background-color);
+    background-color: var(--secondary-hover-color);
 
 }
 
-#acc-profile > img {
+#acc-profile > img,
+#acc-profile > .sk {
 
     background-color: transparent;
     cursor: pointer;
     border-radius: 100%;
     width: 40px;
     height: 40px;
-
-}
-
-#acc-profile > .skeleton {
-
-    background-color: var(--secondary-background-color);
-    width: 40px;
-    height: 40px;
-    border-radius: 100%;
+    align-self: center;
+    overflow: hidden;
 
 }

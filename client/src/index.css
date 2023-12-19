@@ -28,6 +28,10 @@
     --text-color: #ced9e5;
     --unfocused-text-color: #96a6bc;
 
+    --skeleton-base-color: hsl(208, 60%, 16%);
+    --skeleton-highlight-color: hsl(208, 60%, 24%);
+
+
 }
 
 :root, #root-app {
